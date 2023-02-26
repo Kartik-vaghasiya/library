@@ -1,10 +1,14 @@
+import book.Book;
 import book.BookHelp;
 
 import java.io.Console;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
-public class Admin {
+import static book.BookHelp.books;
+
+public class Admin implements ManageBookbyAdmin{
 
     static Scanner sc = new Scanner(System.in);
     Console cl = System.console();
@@ -255,5 +259,29 @@ public class Admin {
                 System.out.println("===============================");
             }
         }
+    }
+
+    @Override
+    public void addBook() {
+
+        String name,author;
+        int id,numCopies,availability;
+
+        System.out.print("Enter Id : ");
+        id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Book Name : ");
+        name = sc.nextLine();
+        System.out.print("Enter Author Name : ");
+        author = sc.nextLine();
+        System.out.print("Enter Number of Copies: ");
+        numCopies = sc.nextInt();
+
+        System.out.println("User Must have to insert 0 or 1 for Availability ==>> 0 for not Available & 1 for Available ");
+        System.out.print("Enter Availability of Book : ");
+        availability = sc.nextInt();
+        sc.nextLine();
+
+        books.add(new Book(id, name, author, numCopies, availability));
     }
 }
