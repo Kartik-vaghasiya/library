@@ -1,7 +1,6 @@
 package book;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 import static book.StudentProfile.*;
@@ -11,9 +10,6 @@ public class BookHelp {
     public static ArrayList<Book> books = new ArrayList<>();
     public static ArrayList<Book> record = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
-    public static Date issueDate;
-    public static Date returnDate;
-
 
     public void booklog() {
 
@@ -41,12 +37,14 @@ public class BookHelp {
                     return;
 
                 default:
+                    System.out.println("\n==========================");
                     System.out.println("Invalid choice!");
+                    System.out.println("==========================");
             }
         }
     }
 
-
+    // admin can login and add book details
     public void addBook() {
 
         String name,author;
@@ -62,7 +60,7 @@ public class BookHelp {
         System.out.print("Enter Number of Copies: ");
         numCopies = sc.nextInt();
 
-        System.out.println("User Must have to insert 0 or 1 for Availability ==>> 0 for not Available & 1 for Available ");
+        System.out.println("User Must have to insert 0 or 1 for Availability ==>> 0 for not Available & 1 for Available \n");
         System.out.print("Enter Availability of Book : ");
         availability = sc.nextInt();
         sc.nextLine();
@@ -70,20 +68,23 @@ public class BookHelp {
         books.add(new Book(id, name, author, numCopies, availability));
     }
 
-
     public void displayBooks() {
 
         if(books.size()==0) {
+            System.out.println("\n===============================");
             System.out.print("There's no Record of Book !!");
+            System.out.println("===============================");
             return;
         }
+
+        //System.out.printf("%-10d %-30s %-10d %-10d %-20s%n",bid,bname,bpoints,copies,avail);
         System.out.println("Book ID " + " | " + "Book Name" + " | " + " Book Author " + " | " + "Book Copies " + " | " +"Book Availability ");
         for (Book b : books) {
             System.out.println(b.getId() + " | " + b.getName() + " | " + b.getAuthor() + " | " + b.getNumCopies() + " | " + b.getAvailability());
         }
     }
 
-
+    // issue and return book method
     public static void issuelog() {
 
         while (true) {
@@ -94,7 +95,6 @@ public class BookHelp {
             ch = sc.nextInt();
             System.out.println("-----------------------");
             sc.nextLine();
-
 
             // Handle user input
             switch (ch) {
@@ -119,37 +119,4 @@ public class BookHelp {
             }
         }
     }
-
-
-
-
-
-//    public void returnBook(Books buybook,ArrayList<Books> totalBooks) {
-//        ListIterator<Books> iterate = totalBooks.listIterator();
-//        while (iterate.hasNext()) {
-//            Books book = iterate.next();
-//            if (book.bid == buybook.bid) {
-//                iterate.next().copies++;
-//                buybook.return_date = LocalDate.now();
-//                long daysBetween = ChronoUnit.DAYS.between(buybook.issue_date, LocalDate.now().plusDays(25));
-//                System.out.println("daysBetween" + daysBetween);
-//                if (daysBetween > 15) {
-//                    long fine_rs = (daysBetween - 15) * 5;
-//                    System.out.println(fine_rs + "buybook");
-//                    setFine(fine_rs);
-//                }
-//                this.issuedBooks.remove(buybook);
-//                System.out.println("Transaction successful!");
-//                System.out.println("-----------------------------------------------------------------------------------");
-//                System.out.println(buybook.bname + " book has been returned");
-//                return;
-//            }
-//        }
-//    }
-
-
-
-
-
-
 }

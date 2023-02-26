@@ -3,7 +3,6 @@ import book.BookHelp;
 
 import java.io.Console;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 import static book.BookHelp.books;
@@ -21,6 +20,7 @@ public class Admin implements ManageBookbyAdmin{
     ArrayList<String> admin_fullname = new ArrayList<>();
     ArrayList<String> admin_password = new ArrayList<>();
 
+    //admin registration method
     public void reg_admin() {
 
         int flag1 = 0;
@@ -122,7 +122,7 @@ public class Admin implements ManageBookbyAdmin{
         }
     }
 
-
+    // Admin login method
     public void adminlog() {
 
         String un;
@@ -267,7 +267,7 @@ public class Admin implements ManageBookbyAdmin{
         String name,author;
         int id,numCopies,availability;
 
-        System.out.print("Enter Id : ");
+        System.out.print("Enter Book Id : ");
         id = sc.nextInt();
         sc.nextLine();
         System.out.print("Enter Book Name : ");

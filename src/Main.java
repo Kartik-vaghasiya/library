@@ -7,7 +7,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-
+// main method
         try{
             while (true) {
 
@@ -33,7 +33,7 @@ public class Main {
                         break;
 
                     default:
-                        System.out.print("Invalid Input !!");
+                        System.out.println("Invalid Input !!");
                 }
             }
         }
@@ -42,6 +42,7 @@ public class Main {
         }
     }
 
+    //registration method
     public static void register() {
 
         try{
@@ -68,7 +69,7 @@ public class Main {
                         return;
 
                     default:
-                        System.out.print("Invalid Input !!");
+                        System.out.println("Invalid Input !!");
                 }
             }
         }
@@ -77,7 +78,7 @@ public class Main {
         }
     }
 
-
+    // login method for admin and student.....
     public static void login() {
 
         try{
@@ -115,7 +116,7 @@ public class Main {
                                     return;
 
                                 default:
-                                    System.out.print("Invalid Input !!");
+                                    System.out.println("Invalid Input !!");
                             }
                         }
 
@@ -143,7 +144,7 @@ public class Main {
                                     return;
 
                                 default:
-                                    System.out.print("Invalid Input !!");
+                                    System.out.println("Invalid Input !!");
                             }
                         }
 
@@ -151,7 +152,7 @@ public class Main {
                         return;
 
                     default:
-                        System.out.print("Invalid Input !!");
+                        System.out.println("Invalid Input !!");
                 }
             }
         }

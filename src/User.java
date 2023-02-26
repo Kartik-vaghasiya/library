@@ -10,7 +10,6 @@ public class User {
     Console cl = System.console();
     char [] temp = new char[0];
 
-    static BookHelp bkhelp = new BookHelp();
 
     //Create ArrayLists Global for username, fullname and password
     ArrayList<String> student_username = new ArrayList<>();
@@ -154,8 +153,6 @@ public class User {
                 System.out.println("Invalid Username");
                 System.out.println("==========================");
             }
-
-
 
             for(int i = 0; i < student_username.size(); i++) {
 
