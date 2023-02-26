@@ -9,7 +9,6 @@ public class Main {
     public static void main(String[] args) {
 
         try{
-
             while (true) {
 
                 int ch = 0;
@@ -46,7 +45,6 @@ public class Main {
     public static void register() {
 
         try{
-
             while (true) {
 
                 int ch = 0;
@@ -58,15 +56,15 @@ public class Main {
                 switch (ch) {
 
                     case 1:
-                        ad.reg_admin();     //Method calling of SignIn Class with parameter of Register class Object
+
+                        ad.reg_admin();
                         return;
 
                     case 2:
-                        st.reg_student();       //Method calling of Register Class
+                        st.reg_student();
                         return;
 
                     case 3:
-                        //forget password   //Method for Exit or Terminate Program
                         return;
 
                     default:
@@ -83,7 +81,6 @@ public class Main {
     public static void login() {
 
         try{
-
             while (true) {
 
                 int ch = 0;
@@ -122,8 +119,6 @@ public class Main {
                             }
                         }
 
-
-
                     case 2:
 
                         while(true) {
@@ -151,7 +146,6 @@ public class Main {
                                     System.out.print("Invalid Input !!");
                             }
                         }
-
 
                     case 3:
                         return;
